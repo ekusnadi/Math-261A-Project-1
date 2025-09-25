@@ -49,3 +49,10 @@ plot(fitted_values, residuals_values,
      ylab = "Residuals",
      pch = 16, )
 abline(h = 0)
+
+# residuals histogram
+hist(residuals_values,
+     main = "Distribution of Residuals",
+     xlab = "Residual value",
+     col = sjsu_blue,
+     border = "white")
