@@ -6,4 +6,5 @@ This project used ChatGPT (GPT-5, OpenAI, 2025) as an external resource. ChatGPT
 - Feedback on the clarity and flow of my writing
 - Suggestions for formatting R code and visualizations
 - Help in locating and summarizing information from assigned course sources (e.g., CalEnviroScreen documentation)
-All data analysis, coding, and interpretation of results were performed independently by me.
+
+All data analysis, base code, and interpretation of results were performed independently by me.
