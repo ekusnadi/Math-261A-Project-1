@@ -28,9 +28,3 @@ All data analysis, coding, and interpretation of results were performed independ
 ## Dataset License
 The **CalEnviroScreen 4.0** dataset is published by the California Office of Environmental Health Hazard Assessment (OEHHA), part of the California Environmental Protection Agency.  
 As a work of the State of California, the dataset is in the **public domain** and may be freely used without restriction.  
-
-## Reproducibility
-To reproduce the analysis:  
-1. Open `project_1.Rproj` in RStudio.  
-2. Run `project_1.R` to generate figures and outputs.  
-3. View the rendered PDF report in the project folder.  
