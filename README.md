@@ -1,4 +1,12 @@
-Paper 1 First Version: 
+Author: Ethan Kusnadi
+Date of Submission: 9/24/2025
+
+Prjoect Folder:
+  - Report: Math 261A Paper 1 - Version 1.pdf
+  - Code: project_1.R
+  - Data: CalEnviroScreen4.xlsx
+
+Paper 1 First Version Notes: 
   - LLM logs have not been added
   - PDF is not in Quarto format yet
 
