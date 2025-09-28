@@ -17,3 +17,5 @@ This project used ChatGPT (GPT-5, OpenAI, 2025) as an external resource. ChatGPT
 - Help in locating and summarizing information from assigned course sources (e.g., CalEnviroScreen documentation)
 
 All data analysis, base code, and interpretation of results were performed independently by me.
+
+The CalEnviroScreen 4.0 dataset is published by the California Office of Environmental Health Hazard Assessment (OEHHA). It is a publicly available government dataset provided through the California Environmental Protection Agency. As a work of the State of California, the dataset is in the public domain and may be freely used, shared, and reproduced for research and educational purposes, provided proper attribution to OEHHA and CalEPA is given.
