@@ -1,7 +1,8 @@
 Author: Ethan Kusnadi
+
 Date of Submission: 9/24/2025
 
-Prjoect Folder:
+Project Folder:
   - Report: Math 261A Paper 1 - Version 1.pdf
   - Code: project_1.R
   - Data: CalEnviroScreen4.xlsx
