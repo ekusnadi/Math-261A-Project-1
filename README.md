@@ -1,21 +1,36 @@
-Author: Ethan Kusnadi
+# Math 261A Project 1
 
-Date of Submission: 9/24/2025
+## Author & Submission Info
+- **Author:** Ethan Kusnadi  
+- **Date of Submission:** September 24, 2025  
 
-Project Folder:
-  - Report: Math 261A Paper 1 - Version 1.pdf
-  - Code: project_1.R
-  - Data: CalEnviroScreen4.xlsx
+## Project Structure
+- **Report:** `Math 261A Paper 1 - Version 1.pdf`  
+  First draft of the project report.  
+- **Code:** `project_1.R`  
+  R script for data cleaning, regression modeling, and visualization.  
+- **Data:** `CalEnviroScreen4.xlsx`  
+  Raw dataset from the California Office of Environmental Health Hazard Assessment (OEHHA).  
 
-Paper 1 First Version Notes: 
-  - LLM logs have not been added
-  - PDF is not in Quarto format yet
+## External Resources
+This project used **ChatGPT (GPT-5, OpenAI, 2025)** as an external resource. ChatGPT was used for:  
+- Feedback on the clarity and flow of my writing  
+- Suggestions for formatting R code and visualizations  
+- Help in locating and summarizing information from assigned course sources (e.g., CalEnviroScreen documentation)  
+- Assistance in writing this README file  
+- Converting the paper into Quarto format  
 
-This project used ChatGPT (GPT-5, OpenAI, 2025) as an external resource. ChatGPT was used for:
-- Feedback on the clarity and flow of my writing
-- Suggestions for formatting R code and visualizations
-- Help in locating and summarizing information from sources (e.g., CalEnviroScreen documentation)
+All data analysis, coding, and interpretation of results were performed independently by me.  
 
-All data analysis, base code, and interpretation of results were performed independently by me.
+[ChatGPT Logs](https://chatgpt.com/g/g-p-68d2293692b481919b2e2cb95e96b2b5-math-261a-project-1/project)  
+*Note: you may have to be logged into the SJSU Enterprise to view.*  
 
-The CalEnviroScreen 4.0 dataset is published by the California Office of Environmental Health Hazard Assessment (OEHHA). It is a publicly available government dataset provided through the California Environmental Protection Agency. As a work of the State of California, the dataset is in the public domain and may be freely used, shared, and reproduced for research and educational purposes, provided proper attribution to OEHHA and CalEPA is given.
+## Dataset License
+The **CalEnviroScreen 4.0** dataset is published by the California Office of Environmental Health Hazard Assessment (OEHHA), part of the California Environmental Protection Agency.  
+As a work of the State of California, the dataset is in the **public domain** and may be freely used without restriction.  
+
+## Reproducibility
+To reproduce the analysis:  
+1. Open `project_1.Rproj` in RStudio.  
+2. Run `project_1.R` to generate figures and outputs.  
+3. View the rendered PDF report in the project folder.  
