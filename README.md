@@ -16,14 +16,11 @@
 This project used **ChatGPT (GPT-5, OpenAI, 2025)** as an external resource. ChatGPT was used for:  
 - Feedback on the clarity and flow of writing  
 - Suggestions for formatting R code and visualizations  
-- Help in locating and summarizing information from assigned course sources (e.g., CalEnviroScreen documentation)  
+- Help in locating and summarizing information from assigned course sources and documentation (e.g., CalEnviroScreen documentation)  
 - Assistance in writing this README file  
 - Converting the paper into Quarto format  
 
 All base code, data analysis, and interpretation of results were performed independently by me.  
-
-[ChatGPT Logs](https://chatgpt.com/g/g-p-68d2293692b481919b2e2cb95e96b2b5-math-261a-project-1/project)  
-*Note: you may have to be logged into the SJSU Enterprise to view.*  
 
 ## Dataset License
 The **CalEnviroScreen 4.0** dataset is published by the California Office of Environmental Health Hazard Assessment (OEHHA), part of the California Environmental Protection Agency.  
