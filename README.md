@@ -2,11 +2,13 @@
 
 ## Author & Submission Info
 - **Author:** Ethan Kusnadi  
-- **Date of Submission:** September 24, 2025  
+- **Date of Submission:** October 4, 2025  
 
 ## Project Structure
-- **Report:** `Math 261A Paper 1 - Version 1.pdf`  
-  First draft of the project report.  
+- **Final Report:** `Paper1_Education_ToxicRelease_Kusnadi.pdf`  
+  Final version of the paper investigating the relationship between education attainment and toxic release in California.
+- **Quarto Source:** `Paper1_Education_ToxicRelease_Kusnadi.qmd`
+  Source file used to generate the report in Quarto.
 - **Code:** `project_1.R`  
   R script for data cleaning, regression modeling, and visualization.  
 - **Data:** `CalEnviroScreen4.xlsx`  
@@ -17,9 +19,9 @@ This project used **ChatGPT (GPT-5, OpenAI, 2025)** as an external resource. Cha
 - Feedback and assistance in revising the clarity, organization, and flow of writing
 - Suggestions for formatting R code and visualizations
 - Guidance on meeting project guidelines and rubric requirements
-- Help in locating and summarizing information from assigned course sources and documentation (e.g., CalEnviroScreen documentation)
-- Assistance in building the reference list and drafting this README file
-- Converting the paper into Quarto format  
+- Help locating and summarizing information from assigned course sources and documentation (e.g., CalEnviroScreen documentation)
+- Assistance compiling the reference list and drafting this README file
+- Converting the report into Quarto format  
 
 All base code, data analysis, and interpretation of results were performed independently by me.  
 
