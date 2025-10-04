@@ -30,3 +30,7 @@ All base code, data analysis, and interpretation of results were performed indep
 ## Dataset License
 The **CalEnviroScreen 4.0** dataset is published by the California Office of Environmental Health Hazard Assessment (OEHHA), part of the California Environmental Protection Agency.  
 As a work of the State of California, the dataset is in the **public domain** and may be freely used without restriction.  
+
+## Data Source Notes
+The CalEnviroScreen 4.0 dataset incorporates emissions data from multiple sources, including the **Registro de Emisiones y Transferencia de Contaminantes (RETC)** maintained by **Secretaría de Medio Ambiente y Recursos Naturales (SEMARNAT)** in Mexico.  
+The official citation URL for SEMARNAT (http://sinat.semarnat.gob.mx/retc) was found to be inactive as of **October 2025**, but the citation remains correct and is retained in the References section of the paper to preserve proper attribution.
