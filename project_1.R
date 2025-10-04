@@ -51,8 +51,18 @@ plot(fitted_values, residuals_values,
 abline(h = 0)
 
 # residuals histogram
+par(mfrow = c(1, 2), mar = c(6, 5, 4, 2) + 0.1)
+
+# Histogram of residuals
 hist(residuals_values,
      main = "Distribution of Residuals",
      xlab = "Residual value",
      col = sjsu_blue,
      border = "white")
+
+# qq plot
+qqnorm(residuals_values,
+       main = "Normal Q-Q Plot of Residuals",
+       pch = 19,
+       col = sjsu_blue)
+qqline(residuals_values, lwd = 2)

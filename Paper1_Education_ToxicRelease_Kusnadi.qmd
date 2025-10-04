@@ -1,11 +1,11 @@
 ---
-title: "Modeling the Relationship Between Education Attainment and Toxic Releases in California Using Simple Linear Regression"
+title: "Modeling the Relationship Between Educational Attainment and Toxic Releases in California Using Simple Linear Regression"
 author: "Ethan Kusnadi"
 thanks: "Project repository available at: [https://github.com/ekusnadi/Math-261A-Project-1](https://github.com/ekusnadi/Math-261A-Project-1)."
 date: 2025-10-04
 date-format: long
 abstract: |
-  This paper explores the relationship between high school education attainment and toxic release in California census tracts using data from CalEnviroScreen 4.0. Educational attainment is examined as a socioeconomic factor that may shape where residents live in relation to environmental hazards. A simple linear regression model shows a slight positive correlation between lower educational attainment and higher toxic release levels, but data issues and violations of regression assumptions cast doubt on the reliability of the results. Simple linear regression is likely unsuitable for this research question, and future analyses could apply data transformations or alternative models to better capture the relationship.
+  This paper explores the relationship between high school educational attainment and toxic release in California census tracts using data from CalEnviroScreen 4.0. Educational attainment is examined as a socioeconomic factor that may shape where residents live in relation to environmental hazards. A simple linear regression model shows a slight positive correlation between lower educational attainment and higher toxic release levels, but data issues and violations of regression assumptions cast doubt on the reliability of the results. Simple linear regression is likely unsuitable for this research question, and future analyses could apply data transformations or alternative models to better capture the relationship.
 format: pdf
 bibliography: references.bib
 number-sections: true
@@ -13,21 +13,21 @@ number-sections: true
 
 # Introduction
 
-This paper investigates the relationship between high school education attainment and toxic release in a region. Education attainment is an important socioeconomic factor, often linked to income, mobility, and access to safer environments. While previous studies have examined how socioeconomic factors such as race and wealth relate to residence in areas with higher toxic release, the specific role of education has not been explored. Because these dynamics can influence where individuals and communities reside, this study evaluates whether lower education attainment is associated with greater exposure to toxic pollution. 
+This paper investigates the relationship between high school educational attainment and toxic release in a region. Educational attainment is an important socioeconomic factor, often linked to income, mobility, and access to safer environments. While previous studies have examined how socioeconomic factors such as race and wealth relate to residence in areas with higher toxic release, the specific role of education has not been fully explored. Because these dynamics can influence where individuals and communities reside, this study evaluates whether lower educational attainment is associated with greater exposure to toxic waste levels. 
 
-Education attainment and toxic release data from the CalEnviroScreen $4.0$ data dashboard were employed to fit a simple linear regression model using R [@OEHHA2021data; @RCoreTeam2025]. While the analysis indicates a slight positive correlation between education attainment and toxic release in California, underlying issues in the data limit the strength of this conclusion.
+Educational attainment and toxic release data from the CalEnviroScreen $4.0$ data dashboard were employed to fit a simple linear regression model using R [@OEHHA2021data; @RCoreTeam2025]. While the analysis indicates a slight positive correlation between lower educational attainment percentages and higher toxic release index levels in California, underlying issues in the data limit the strength of this conclusion.
 
 The structure of the remainder of this paper will be as follows: Section $2$ gives an overview of the data, Section $3$ explains the methods used in the analysis, and Section $4$ describes the results and possible further explorations. 
 
 # Data
 
-The data used for this project comes from the Office of Environmental Health Hazard Assessment (OEHHA) CalEnviroScreen $4.0$ data dashboard [@OEHHA2021report]. CalEnviroScreen is a mapping tool for ranking and categorizing California communities based on socioeconomic, environmental, and health data. This data is sourced from various state and federal government organizations, including the California Air Resources Board (CARB), California Department of Pesticide Regulation (CDPR), Department of Toxic Substances Control (DTSC) [@OEHHA2021report]. 
+Data for this project was obtained from the Office of Environmental Health Hazard Assessment (OEHHA) CalEnviroScreen $4.0$ data dashboard [@OEHHA2021report]. CalEnviroScreen is a mapping tool for ranking and categorizing California communities based on socioeconomic, environmental, and health data. This data is sourced from various state and federal government organizations, including the California Air Resources Board (CARB), California Department of Pesticide Regulation (CDPR), Department of Toxic Substances Control (DTSC) [@OEHHA2021report]. 
 
-The raw data can be downloaded as an Excel spreadsheet from OEHHA’s CalEnviroScreen website, with metrics for every individual census tract in California [@OEHHA2021report]. A census tract is a geographic subdivision of a county defined for the purpose of collecting and analyzing census data. For this analysis, the relevant columns in this dataset are ‘Education’ and ‘Tox. Release’, which corresponds to education attainment and toxic releases from facilities. 
+The raw data is available for download as an Excel spreadsheet from OEHHA’s CalEnviroScreen website, with metrics for every individual census tract in California [@OEHHA2021report]. A census tract is a geographic subdivision of a county defined for the purpose of collecting and analyzing census data. For this analysis, the relevant columns in this dataset are ‘Education’ and ‘Tox. Release’, which corresponds to educational attainment and toxic release index levels from facilities. 
 
-The education attainment data represents the percent of the population within a particular census tract that is over age $25$ and has less than a high school education. This data was originally sourced from the American Community Survey (ACS), an ongoing survey of the US population conducted by the US Census Bureau [@USCensus2019]. These values are based on $5$-year ACS estimates from $2015$ to $2019$. Each census tract estimate was evaluated for reliability using both the standard error (SE) and relative standard error (RSE). Estimates were included in the dataset only if they met at least one reliability criterion: an RSE less than $50$ or an SE less than the mean SE of all California census tract estimates for education. Because the education attainment variable is expressed as a percentage, its values are bounded between $0$ and $100$. This violates the regression assumption that independent variables are unbounded and may cause issues with model fit or interpretation. 
+The educational attainment data represents the percent of the population within a particular census tract that is over age $25$ and has less than a high school education. This data was originally sourced from the American Community Survey (ACS), an ongoing survey of the US population conducted by the US Census Bureau [@USCensus2019]. These values are based on $5$-year ACS estimates from $2015$ to $2019$. Each census tract estimate was evaluated for reliability using both the standard error (SE) and relative standard error (RSE). Estimates were included in the dataset only if they met at least one reliability criterion: an RSE less than $50$ or an SE less than the mean SE of all California census tract estimates for education. Because educational attainment is a percentage, the bounded scale may complicate model fit and interpretation.
 
-The toxic releases from facilities data contains the toxicity-weighted concentrations of modeled chemical releases to air from facility emissions and off-site incineration averaged over $2017$ to $2019$ and releases from Mexican facilities averaged over $2014$ to $2016$. This combines data from the Toxics Release Inventory and Risk Screening Environmental Indicators maintained by the U.S. Environmental Protection Agency, as well as the Mexico Registry of Emissions and Transfer of Contaminants [@USEPA2021; @SEMARNAT2021]. Southern California borders Mexico, so the RETC data accounts for this cross-border pollution. Annual release of listed chemicals (in lbs/yr) in the TRI dataset is self-reported by facilities annually if they meet a threshold of at least $10$ employees and at least 25,000 lbs manufactured or 10,000 lbs used of certain chemicals. RSEI then performs a data transformation on the TRI and RETC data using chemical-specific weights and atmospheric dispersion models to create an estimated pollution concentration score. This score is meant to be ranked against other RSEI scores and does not have meaning otherwise, which may lead to issues in the linear regression later on. This index has a lower bound of 0, which may also cause issues. 
+The toxic releases from facilities data contains the toxicity-weighted concentrations of modeled chemical releases to air from facility emissions and off-site incineration averaged over $2017$ to $2019$ and releases from Mexican facilities averaged over $2014$ to $2016$. This combines data from the Toxics Release Inventory (TRI) and Risk Screening Environmental Indicators (RSEI) maintained by the U.S. Environmental Protection Agency, as well as the Mexico Registry of Emissions and Transfer of Contaminants (RETC) [@USEPA2021; @SEMARNAT2021]. Southern California borders Mexico, so the RETC data accounts for this cross-border pollution. Annual release of listed chemicals (in lbs/yr) in the TRI dataset is self-reported by facilities annually if they meet a threshold of at least $10$ employees and at least 25,000 lbs manufactured or 10,000 lbs used of certain chemicals. RSEI then performs a data transformation on the TRI and RETC data using chemical-specific weights and atmospheric dispersion models to create an estimated pollution concentration score. This score is meant to be ranked against other RSEI scores and does not have meaning otherwise, which may lead to issues in the linear regression later on. This index has a lower bound of 0, which may also cause issues. 
 
 Every row in the dataset containing missing values (“NA”) for either education or toxic release was removed. This resulted in removing $103$ rows, leaving $7932$ points in the dataset. Several outliers are present in the toxic release data, but they are retained in the current model, as their accuracy has not yet been verified [@OEHHA2021report]. Figure 1 shows the frequency distributions of the observed values, both of which are heavily right-skewed.
 
@@ -62,7 +62,7 @@ hist(education,
      border = "white")
 hist(tox_release,
      main = "Distribution of Toxic Releases",
-     xlab = "Toxicity-weighted Concentrations of Chemical Releases",
+     xlab = "Toxicity-weighted Concentration Scores",
      col = sjsu_gold,
      border = "white")
 par(mfrow = c(1, 1))
@@ -70,15 +70,15 @@ par(mfrow = c(1, 1))
 
 # Methods
 
-A simple linear regression model was fitted to analyze the relationship between education attainment and toxic release. The generalized equation for simple linear regression is presented below: 
+A simple linear regression model was fitted to analyze the relationship between educational attainment and toxic release. The generalized equation for simple linear regression is presented below: 
 $$Y_i = \beta_0 +\beta_1 X_i + \varepsilon_i \quad \text{for } i=1,\dots, n$$
-In this analysis, the response $Y_i$ represents the toxic release variable and the predictor $X_i$ represents the education variable. The intercept $\beta_0$ corresponds to the expected toxic release index in a census tract in California when the education variable equals zero. The slope parameter $\beta_1$ represents the expected change in toxic release for a one percentage point increase in education attainment, which would mean an increased percentage of people without a high school education. The random error term $\varepsilon_i$ captures unexplained variance. 
+In this analysis, the response $Y_i$ represents the toxic release variable and the predictor $X_i$ represents the education variable. The intercept $\beta_0$ corresponds to the expected toxic release index in a census tract in California when the education variable equals zero. The slope parameter $\beta_1$ represents the expected change in toxic release for a one percentage point increase in educational attainment, which would mean an increased percentage of people without a high school education. The random error term $\varepsilon_i$ captures unexplained variance. 
 
-The linear regression model assumes validity, which is that the variables accurately reflect the quantities of interest and that the model includes all relevant predictors. In this dataset, both education attainment percentages and toxic release index levels are bounded and result from prior data processing, which may limit the precision of estimates. Another assumption of the linear regression model is that the data is representative of the population of interest. Representativeness will hold if inference is restricted to regions in California, but may be violated if extended to other areas.
+The linear regression model assumes validity, which is that the variables accurately reflect the quantities of interest and that the model includes all relevant predictors. In this dataset, both educational attainment percentages and toxic release index levels are bounded and result from prior data processing, which may limit the precision of estimates. Another assumption of the linear regression model is that the data is representative of the population of interest. Representativeness will hold if inference is restricted to regions in California, but may be violated if extended to other areas.
 
-For the error terms, the linear regression model assumes independence, equal variance, a mean of zero, and normal distribution. In this problem, nearby census tracts may be spatially correlated, meaning that educational attainment or toxic releases may not be independent across tracts. As the linear regression model is estimated using the ordinary least squares method to minimize the sum of squared residuals, the residuals produced have a sample mean of zero by construction.
+For the error terms, the linear regression model assumes independence, equal variance, a mean of zero, and normal distribution. In this research problem, nearby census tracts may be spatially correlated, meaning that educational attainment or toxic releases may not be independent across tracts. As the linear regression model is estimated using the ordinary least squares method to minimize the sum of squared residuals, the residuals produced have a sample mean of zero by construction.
 
-The linear regression was performed by employing the lm() function from the R programming language [@RCoreTeam2025]. 
+The linear regression was performed with the lm() function from the R programming language [@RCoreTeam2025]. 
 
 ```{r}
 #| echo: false
@@ -91,7 +91,7 @@ residuals_values <- residuals(model)
 # Results
 
 After training, the simple linear regression model produced model parameters of intercept 
-$\beta_0 = `r round(coef(model)[1], 1)`$ and slope $\beta_1 = `r round(coef(model)[2], 1)`$. This implies that for a one percentage point increase in the proportion of residents without a high school education, the estimated toxic release index increases by about `r round(coef(model)[2], 0)` units. The model explains only `r round(summary(model)$r.squared * 100, 1)`% of the variation in toxic release ($R^2$ = `r round(summary(model)$r.squared, 3)`), indicating that educational attainment alone accounts for little of the variability in toxic release levels. Although the regression shows a positive correlation between a lower education attainment of residents and higher toxic waste levels across census tracts in California, the model’s limited explanatory power makes this association uncertain. If this relationship were confirmed, it would suggest that communities with lower educational attainment experience disproportionate exposure to environmental hazards, highlighting environmental inequality. 
+$\beta_0 = `r round(coef(model)[1], 1)`$ and slope $\beta_1 = `r round(coef(model)[2], 1)`$. This implies that for a one percentage point increase in the proportion of residents without a high school education, the estimated toxic release index increases by about `r round(coef(model)[2], 0)` units. The model explains only `r round(summary(model)$r.squared * 100, 1)`% of the variation in toxic release ($R^2$ = `r round(summary(model)$r.squared, 3)`), indicating that educational attainment alone accounts for little of the variability in toxic release levels. Although the regression shows a positive correlation between a lower educational attainment of residents and higher toxic waste levels across census tracts in California, the limited explanatory power of the model makes this association uncertain. If this relationship were confirmed, it would suggest that communities with lower educational attainment experience disproportionate exposure to environmental hazards, highlighting environmental inequality. 
 
 ```{r}
 #| echo: false
@@ -130,20 +130,29 @@ Plotting the residuals against the fitted values provides further insight into t
 
 ```{r}
 #| echo: false
-#| fig-cap: "Histogram of residuals from the simple linear regression."
-#| fig-width: 7
+#| fig-cap: "Histogram and Q-Q plot of residuals from the simple linear regression."
+#| fig-width: 10
 #| fig-height: 5
-par(mar = c(6, 5, 4, 2) + 0.1)
+par(mfrow = c(1, 2), mar = c(6, 5, 4, 2) + 0.1)
+
+# Histogram of residuals
 hist(residuals_values,
      main = "Distribution of Residuals",
      xlab = "Residual value",
      col = sjsu_blue,
      border = "white")
+
+# Q-Q plot of residuals
+qqnorm(residuals_values,
+       main = "Normal Q-Q Plot of Residuals",
+       pch = 19,
+       col = sjsu_blue)
+qqline(residuals_values, lwd = 2)
 ```
 
-The histogram of residuals demonstrates a heavy right skew, indicating the presence of large outliers. This pattern violates the normality assumption of the residuals in linear regression.
+The histogram of residuals demonstrates a heavy right skew with extreme outliers, while the Q-Q plot shows the right tail deviating sharply from the reference line. Together, these diagnostics indicate a violation of the normality assumption for residuals in linear regression.
 
-Therefore, although the positive slope suggests a positive relationship between lower educational attainment and higher toxic release levels, the diagnostic plots reveal significant issues with the analysis. As a result, the findings are unreliable, and simple linear regression is likely not well suited for this research question. 
+Therefore, although the positive slope suggests a positive relationship between lower educational attainment and higher toxic release levels, the diagnostic plots reveal significant issues with the analysis. As a result, the findings are deemed unreliable, and simple linear regression is likely not well suited for this research question. 
 
 Future analyses could apply simple linear regression to log-transformed toxic release data to account for the right-skewed distribution. Alternatively, nonlinear or multiple regression models incorporating additional socioeconomic variables could be tested to better isolate the effect of education.
 
