@@ -14,11 +14,11 @@
 
 ## External Resources
 This project used **ChatGPT (GPT-5, OpenAI, 2025)** as an external resource. ChatGPT was used for:  
-- Feedback on the clarity and flow of writing  
-- Suggestions for formatting R code and visualizations  
+- Feedback and assistance in revising the clarity, organization, and flow of writing
+- Suggestions for formatting R code and visualizations
+- Guidance on meeting project guidelines and rubric requirements
 - Help in locating and summarizing information from assigned course sources and documentation (e.g., CalEnviroScreen documentation)
-- Building the reference list
-- Assistance in writing this README file  
+- Assistance in building the reference list and drafting this README file
 - Converting the paper into Quarto format  
 
 All base code, data analysis, and interpretation of results were performed independently by me.  
