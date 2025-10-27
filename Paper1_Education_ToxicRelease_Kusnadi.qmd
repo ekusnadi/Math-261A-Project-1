@@ -91,7 +91,7 @@ residuals_values <- residuals(model)
 # Results
 
 After training, the simple linear regression model produced model parameters of intercept 
-$\beta_0 = `r round(coef(model)[1], 1)`$ and slope $\beta_1 = `r round(coef(model)[2], 1)`$. This implies that for a one percentage point increase in the proportion of residents without a high school education, the estimated toxic release score increases by about `r round(coef(model)[2], 0)` units. The model explains only `r round(summary(model)$r.squared * 100, 1)`% of the variation in toxic release ($R^2$ = `r round(summary(model)$r.squared, 3)`), indicating that educational attainment alone accounts for little of the variability in toxic release levels. Although the regression shows a positive correlation between a lower educational attainment of residents and higher toxic waste levels across census tracts in California, the limited explanatory power of the model makes this association uncertain. If this relationship were confirmed, it would suggest that communities with lower educational attainment experience disproportionate exposure to environmental hazards, highlighting environmental inequality. 
+$b_0 = `r round(coef(model)[1], 1)`$ and slope $b_1 = `r round(coef(model)[2], 1)`$. This implies that for a one percentage point increase in the proportion of residents without a high school education, the estimated toxic release score increases by about `r round(coef(model)[2], 0)` units. The model explains only `r round(summary(model)$r.squared * 100, 1)`% of the variation in toxic release ($R^2$ = `r round(summary(model)$r.squared, 3)`), indicating that educational attainment alone accounts for little of the variability in toxic release levels. Although the regression shows a positive correlation between a lower educational attainment of residents and higher toxic waste levels across census tracts in California, the limited explanatory power of the model makes this association uncertain. If this relationship were confirmed, it would suggest that communities with lower educational attainment experience disproportionate exposure to environmental hazards, highlighting environmental inequality. 
 
 ```{r}
 #| echo: false
@@ -126,7 +126,7 @@ plot(fitted_values, residuals_values,
 abline(h = 0)
 ```
 
-Plotting the residuals against the fitted values provides further insight into the validity of the regression assumptions. The residuals are not randomly scattered around the zero line and the spread of residuals decreases as fitted values increase. This pattern indicates heteroscedasticity, or unequal variance of the error terms, which violates the equal variance assumption of linear regression. 
+Plotting the residuals against the fitted values provides further insight into the validity of the regression assumptions. The residuals are not evenly scattered around the zero line and the spread of residuals decreases as fitted values increase. This pattern indicates heteroscedasticity, or unequal variance of the error terms, which violates the equal variance assumption of linear regression. 
 
 ```{r}
 #| echo: false
