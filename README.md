@@ -21,7 +21,7 @@ This project used **ChatGPT (GPT-5, OpenAI, 2025)** as an external resource. Cha
 - Assistance compiling the reference list and drafting this README file
 - Converting the report into Quarto format  
 
-All base code, data analysis, and interpretation of results were performed independently by me.  
+All base code, data analysis, and interpretation of results were performed independently by the author.  
 
 *Note: Chat logs could not be shared due to SJSU turning off the share feature in the ChatGPT Enterprise.*
 
