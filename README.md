@@ -8,9 +8,7 @@
 - **Report:** `Paper1_Education_ToxicRelease_Kusnadi.pdf`  
   2nd version of the paper investigating the relationship between education attainment and toxic release in California.
 - **Quarto Source:** `Paper1_Education_ToxicRelease_Kusnadi.qmd`
-  Source file used to generate the report in Quarto.
-- **Code:** `project_1.R`  
-  R script for data cleaning, regression modeling, and visualization.  
+  Source file used to generate the report in Quarto, containing all R code for data cleaning, regression modeling, and visualization.
 - **Data:** `CalEnviroScreen4.xlsx`  
   Raw dataset from the California Office of Environmental Health Hazard Assessment (OEHHA).  
 
