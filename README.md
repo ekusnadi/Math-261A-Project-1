@@ -2,7 +2,7 @@
 
 ## Author & Submission Info
 - **Author:** Ethan Kusnadi  
-- **Date of Submission:** October 4, 2025  
+- **Date of Submission:** October 29, 2025  
 
 ## Project Structure
 - **Report:** `Paper1_Education_ToxicRelease_Kusnadi.pdf`  
