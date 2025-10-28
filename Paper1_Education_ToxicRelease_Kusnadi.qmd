@@ -149,7 +149,7 @@ qqline(residuals_values, lwd = 2)
 
 The histogram of residuals demonstrates a heavy right skew with extreme outliers, while the Q-Q plot shows the right tail deviating sharply from the reference line. Together, these diagnostics indicate a violation of the normality assumption for residuals in linear regression.
 
-Therefore, although the positive slope suggests a positive relationship between lower educational attainment and higher toxic release levels, the diagnostic plots reveal significant issues with the analysis. As a result, the findings are deemed unreliable, and simple linear regression is likely not well suited for this research question.
+Therefore, although the positive slope indicates that regions with lower educational attainment tend to have higher levels of toxic release, the diagnostic plots reveal significant issues with the model. As a result, the findings are deemed unreliable, and simple linear regression is likely not well suited for this research question.
 
 Future analyses could apply simple linear regression to log-transformed toxic release data to account for the right-skewed distribution. Alternatively, nonlinear or multiple regression models incorporating additional socioeconomic variables could be tested to better isolate the effect of education.
 
