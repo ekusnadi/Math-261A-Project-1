@@ -2,7 +2,7 @@
 title: "Modeling the Relationship Between Educational Attainment and Toxic Releases in California Using Simple Linear Regression"
 author: "Ethan Kusnadi"
 thanks: "Project repository available at: [https://github.com/ekusnadi/Math-261A-Project-1](https://github.com/ekusnadi/Math-261A-Project-1)."
-date: 2025-10-04
+date: 2025-10-29
 date-format: long
 abstract: |
   This paper explores the relationship between high school educational attainment and toxic emissions from industrial facilities across California census tracts using data from CalEnviroScreen 4.0. Educational attainment is examined as a socioeconomic factor that may influence where residents live in relation to environmental hazards. A simple linear regression indicates that census tracts with lower high school completion tend to experience higher levels of toxic emission, but data issues and violations of regression assumptions cast doubt on the reliability of the results. Simple linear regression may therefore be unsuitable for this research question, and future analyses could apply data transformations or alternative models to better capture the relationship.
