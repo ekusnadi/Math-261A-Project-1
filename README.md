@@ -10,7 +10,9 @@
 - **Quarto Source:** `Paper1_Education_ToxicRelease_Kusnadi.qmd`
   Source file used to generate the report in Quarto, containing all R code for data cleaning, regression modeling, and visualization.
 - **Data:** `CalEnviroScreen4.xlsx`  
-  Raw dataset from the California Office of Environmental Health Hazard Assessment (OEHHA).  
+  Raw dataset from the California Office of Environmental Health Hazard Assessment (OEHHA).
+- **References:** `references.bib`  
+  BibTeX file containing all sources cited in the Quarto report.
 
 ## External Resources
 This project used **ChatGPT (GPT-5, OpenAI, 2025)** as an external resource. ChatGPT was used for:  
