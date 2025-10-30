@@ -1,5 +1,5 @@
 ---
-title: "Modeling the Relationship Between Educational Attainment and Toxic Releases in California Using Simple Linear Regression"
+title: "Educational Attainment and Environmental Exposure: Assessing the Link Between High School Completion and Toxic Releases in California."
 author: "Ethan Kusnadi"
 thanks: "Project repository available at: [https://github.com/ekusnadi/Math-261A-Project-1](https://github.com/ekusnadi/Math-261A-Project-1)."
 date: 2025-10-29
@@ -153,9 +153,7 @@ qqline(residuals_values, lwd = 2)
 
 The histogram of residuals demonstrates a heavy right skew with extreme outliers, while the Q-Q plot shows the right tail deviating sharply from the reference line. Together, these diagnostics indicate a violation of the normality assumption for residuals in linear regression.
 
-Therefore, although the positive slope indicates that regions with lower educational attainment tend to have higher levels of toxic release, the diagnostic plots reveal significant issues with the model. As a result, the findings are deemed unreliable, and simple linear regression is likely not well suited for this research question.
-
-Future analyses could apply simple linear regression to log-transformed toxic release data to account for the right-skewed distribution. Alternatively, nonlinear or multiple regression models incorporating additional socioeconomic variables could be tested to better isolate the effect of education.
+Although the simple linear regression model suggests that regions in California with lower educational attainment tend to experience higher levels of toxic release, the diagnostic plots reveal major violations of model assumptions, including non-normal residuals, unequal variance, and the influence of extreme outliers. These issues indicate that the linear model does not adequately capture the underlying relationship between education and toxic release. As a result, the findings cannot be interpreted as reliable evidence of an association. Overall, the analysis suggests that educational attainment alone explains little of the variation in toxic release, implying that toxic waste exposure is shaped by broader social and industrial factors. Future analyses could apply simple linear regression to log-transformed toxic release data to account for the right-skewed distribution. Alternatively, nonlinear or multiple regression models incorporating additional socioeconomic variables could be tested to better isolate the effect of education.
 
 \newpage
 
